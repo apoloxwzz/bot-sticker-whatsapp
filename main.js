@@ -1,3 +1,6 @@
+// bot by: apolomecmec
+
+
 const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
 const qrcode = require("qrcode-terminal");
 const fs = require("fs");
@@ -48,9 +51,6 @@ client.on("message", async (message) => {
       })
       .webp({ quality: 90, lossless: false, nearLossless: true })
       .toFile(outputPath);
-
-    //await embedMetadata(outputPath, "+55 86 99929-8797", "apolomecmec");
-
     const sticker = fs.readFileSync(outputPath);
     const stickerMedia = new MessageMedia("image/webp", sticker.toString("base64"), "sticker.webp");
 
@@ -91,3 +91,6 @@ process.on("SIGINT", () => {
 });
 
 client.initialize();
+
+
+
